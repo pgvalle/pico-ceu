@@ -448,7 +448,7 @@ val pico :PICO = group {
                     set cpu.sum = cpu.sum + (t - (cpu.prv or t))
                 }
 
-                val e = x-input.event-timeout(`:tag SDL_ANY`, math.max(0,togo))
+                val' e = x-input.event-timeout(`:tag SDL_ANY`, math.max(0,togo))
                 set cpu.prv = x-get.ticks()
                 broadcast(e)
                 until (e is? :Pico.Quit)
