@@ -19,7 +19,7 @@ func layout-to-rects (lay, parent :Rect) {
                     until lay[l'][c] /= #rs1
                     set r.dim.h = (l' - l) + 1
                 }
-                set rs1[+] = r
+                set rs1[+] = drop(r)
             }
         }
     }
@@ -44,8 +44,7 @@ func layout-to-rects (lay, parent :Rect) {
             }
         }
     }
-    rs2
-
+    drop(rs2)
 }
 
 task Grid (rs) {

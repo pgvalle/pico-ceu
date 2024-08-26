@@ -1,6 +1,6 @@
 ^["@/pico/pico.ceu"]
 
-pico.output.show(false)
+pico.set.show(false)
 
 spawn {
     par-or {
