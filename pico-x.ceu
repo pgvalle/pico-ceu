@@ -401,7 +401,8 @@ val pico :PICO = group {
             val ret = #[]
             loop tsk1 in tsks {
                 loop tsk2 in tsks {
-                    ;;println(status(tsk1), status(tsk2), tsk1, tsk2)
+                    ;;println(tsk1, status(tsk1), tsk1.pub)
+                    ;;println(tsk2, status(tsk2), tsk2.pub)
                     val ok? = (tsk1 /= tsk2) and f-cmp(tsk1.pub, tsk2.pub)
                     if ok? {
                         set ret[+] = [tsk1, tsk2]
@@ -409,7 +410,7 @@ val pico :PICO = group {
                     until ok?
                 }
             }
-            ret
+            drop(ret)
         }
         [xx-pct-to-pos, xx-point-vs-rect?, xx-rect-vs-rect?, xx-collisions]
     }
